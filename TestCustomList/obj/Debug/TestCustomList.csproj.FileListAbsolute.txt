@@ -1,0 +1,9 @@
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\obj\Debug\TestCustomList.csprojResolveAssemblyReference.cache
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\bin\Debug\TestCustomList.dll
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\bin\Debug\TestCustomList.pdb
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\bin\Debug\CustomList.exe
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\bin\Debug\CustomList.pdb
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\obj\Debug\TestCustomList.dll
+C:\Users\chadk\Documents\Visual Studio 2015\Projects\CustomList\TestCustomList\obj\Debug\TestCustomList.pdb

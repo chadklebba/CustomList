@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace CustomList
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable<T>
     {
         public int count;
         public T[] array;
@@ -42,9 +43,44 @@ namespace CustomList
             
         }
 
-        public void Remove(T item)
+        public bool Remove(T item)
         {
+            bool removed;
+            int index;
+            try
+            {
+                index = Array.IndexOf(array, item);
+                removed = true;
+            }
+            catch
+            {
+                removed = false;
+                return removed;
+            }
+            capacity = capacity - 1;
+            newarray = new T[capacity];
+            count--;
 
+            for(int i = index; i <= count; i++)
+            {
+                array[i] = array[i + 1];
+            }          
+            for (int j = 0; j < count; j++)
+            {
+                newarray[j] = array[j];
+            }
+            array = newarray;
+            return removed;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

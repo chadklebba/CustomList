@@ -87,15 +87,64 @@ namespace TestCustomList
             Assert.AreEqual(customList.array[2], "Three");
         }
 
-        //[TestMethod]
-        //public void Remove_OneOfFourInts_ListWithThreeInts()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>() { 1, 2, 3, 4 };
-        //    //Act
-        //    customList.Remove(1);
-        //    //Assert
-        //    Assert.AreEqual(customList.Count, 3);
-        //}
+        [TestMethod]
+        public void Remove_OneOfFourInts_ListWithThreeInts()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            //Act
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
+            customList.Add(4);
+            customList.Remove(1);
+            //Assert
+            Assert.AreEqual(customList.Count, 3);
+        }
+
+        [TestMethod]
+        public void Remove_NumberThree_ListOneTwoFour()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            //Act
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
+            customList.Add(4);
+            customList.Remove(3);
+            //Assert
+            Assert.AreEqual(customList.array[2], 4);
+        }
+
+        [TestMethod]
+        public void Remove_OneStringFromList_ListWithThreeStrings()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            //Act
+            customList.Add("One");
+            customList.Add("Two");
+            customList.Add("Three");
+            customList.Add("Four");
+            customList.Remove("One");
+            //Assert
+            Assert.AreEqual(customList.Count, 3);
+        }
+
+        [TestMethod]
+        public void Remove_TheStringThree_ListOneTwoFour()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            //Act
+            customList.Add("One");
+            customList.Add("Two");
+            customList.Add("Three");
+            customList.Add("Four");
+            customList.Remove("Three");
+            //Assert
+            Assert.AreEqual(customList.array[2], "Four");
+        }
     }
 }

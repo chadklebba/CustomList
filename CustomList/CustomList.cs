@@ -134,6 +134,34 @@ namespace CustomList
 
             return result;
         }
+
+        public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> result = new CustomList<T>();
+            bool res = false;
+            result.array = new T[listOne.count - listTwo.count];
+            for(int i = 0; i < listOne.count; i++)
+            {
+                for(int j = 0; j <listTwo.count; j++)
+                {
+                    if (listOne.array[i].Equals(listTwo.array[j]))
+                    {
+                        res = false;
+                        break;
+                    }
+                    else
+                    {
+                        res = true;
+                    }
+                    if (res == true)
+                    {
+                        result.Add(listOne.array[i]);
+                    }
+                }
+                
+            }
+            return result;
+        }
         }
     }
 

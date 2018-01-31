@@ -18,7 +18,7 @@ namespace TestCustomList
             //Assert
             Assert.AreEqual(customList.Count, 2);
         }
-   
+
         [TestMethod]
         public void Add_TwoIntsToExistingList_ListWithFourInts()
         {
@@ -218,11 +218,11 @@ namespace TestCustomList
             customList.Add("store");
             customList.Add("after");
             customList.Add("work");
-            foreach(string word in customList)
+            foreach (string word in customList)
             {
                 sentence += word + " ";
             }
-            
+
             //Assert
             Assert.AreEqual(sentence, result);
         }
@@ -308,7 +308,7 @@ namespace TestCustomList
             CustomList<string> result = new CustomList<string>();
             result = customList1 + customList2;
             //Assert
-            Assert.AreEqual(result.count,8);
+            Assert.AreEqual(result.count, 8);
         }
 
         [TestMethod]
@@ -330,6 +330,46 @@ namespace TestCustomList
             result = customList1 + customList2;
             //Assert
             Assert.AreEqual(result.array[4], "Two");
+        }
+
+        [TestMethod]
+        public void MinusStrings_OneListFromAnother_ThirdListEqualsFirstMinusSecond()
+        {
+            //Arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            //Act
+            customList1.Add("One");
+            customList1.Add("Two");
+            customList1.Add("Three");
+            customList1.Add("Four");
+            customList2.Add("One");
+            customList2.Add("Three");
+
+            CustomList<string> result = new CustomList<string>();
+            result = customList1 - customList2;
+            //Assert
+            Assert.AreEqual(result.array[0], "Two");
+        }
+
+        [TestMethod]
+        public void MinusInts_OneListFromAnother_ThirdListEqualsFirstMinusSecond()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            //Act
+            customList1.Add(1);
+            customList1.Add(2);
+            customList1.Add(3);
+            customList1.Add(4);
+            customList2.Add(1);
+            customList2.Add(3);
+
+            CustomList<int> result = new CustomList<int>();
+            result = customList1 - customList2;
+            //Assert
+            Assert.AreEqual(result.array[0], 2);
         }
     }
 }

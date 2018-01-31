@@ -45,12 +45,19 @@ namespace CustomList
 
         public bool Remove(T item)
         {
-            bool removed;
-            int index;
+            bool removed = false;
+            int index = 0;
             try
             {
-                index = Array.IndexOf(array, item);
-                removed = true;
+                for(int i = 0; i < count; i++)
+                {
+                    if (array[i].Equals(item))
+                    {
+                        index = i;
+                        removed = true;
+                    }
+                }
+                
             }
             catch
             {
@@ -72,15 +79,61 @@ namespace CustomList
             array = newarray;
             return removed;
         }
+        public static CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> result = new CustomList<T>();
+            result.array = new T[listOne.count + listTwo.count];
+            int j = 0;
+            for (int i = 0; i < listOne.count; i++)
+            {
+                result.array[j] = listOne.array[i];
+                j++;
+                result.array[j] = listTwo.array[i];
+                j++;
 
+            }
+            
+            return result;
+        }
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < count; i++)
+            {
+                yield return array[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
             throw new NotImplementedException();
         }
+
+
+        public override string ToString()
+        {
+            string endString = "";
+            foreach(T item in this)
+            {
+                endString = endString + item;
+            }
+            return endString;
+        }
+
+        public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> result = new CustomList<T>();
+            result.array = new T[listOne.count + listTwo.count];
+            for (int i = 0; i < listOne.count; i++)
+            {
+                result.Add(listOne.array[i]);
+            }
+            for (int i = 0; i < listTwo.count; i++)
+            {
+                result.Add(listTwo.array[i]);
+            }
+
+            return result;
+        }
+        }
     }
-}
+

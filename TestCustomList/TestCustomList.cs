@@ -203,6 +203,26 @@ namespace TestCustomList
         }
 
         [TestMethod]
+        public void Zip_TwoIntListsTogether_OneZippedList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList1.Add(7);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            customList2.Add(8);
+            CustomList<int> result = CustomList<int>.Zip(customList1, customList2);
+            //Assert
+            Assert.AreEqual(result.array[1], 2);
+        }
+
+        [TestMethod]
         public void Iterate_ListOfStrings_IntoAString()
         {
             //Arrange

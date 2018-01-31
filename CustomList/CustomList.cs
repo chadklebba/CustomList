@@ -30,17 +30,14 @@ namespace CustomList
                 }
                 array = newarray;
                 array[count -1] = item;
-                     
-                
-        }
+         }
+
         public int Count
         {
             get
             {
                 return count;
             }
-            
-            
         }
 
         public bool Remove(T item)
@@ -57,7 +54,6 @@ namespace CustomList
                         removed = true;
                     }
                 }
-                
             }
             catch
             {
@@ -67,7 +63,6 @@ namespace CustomList
             capacity = capacity - 1;
             newarray = new T[capacity];
             count--;
-
             for(int i = index; i <= count; i++)
             {
                 array[i] = array[i + 1];
@@ -79,6 +74,7 @@ namespace CustomList
             array = newarray;
             return removed;
         }
+
         public static CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> result = new CustomList<T>();
@@ -90,11 +86,10 @@ namespace CustomList
                 j++;
                 result.array[j] = listTwo.array[i];
                 j++;
-
             }
-            
             return result;
         }
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)
@@ -107,8 +102,7 @@ namespace CustomList
         {
             throw new NotImplementedException();
         }
-
-
+        
         public override string ToString()
         {
             string endString = "";
@@ -131,7 +125,6 @@ namespace CustomList
             {
                 result.Add(listTwo.array[i]);
             }
-
             return result;
         }
 
@@ -162,6 +155,6 @@ namespace CustomList
             }
             return result;
         }
-        }
-    }
+     }
+  }
 

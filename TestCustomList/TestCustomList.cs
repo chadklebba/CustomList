@@ -272,7 +272,7 @@ namespace TestCustomList
         }
 
         [TestMethod]
-        public void ListOfInts_ConvertedIntoString_CombinedString()
+        public void ToString_ConvertedIntoString_CombinedString()
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
@@ -293,7 +293,7 @@ namespace TestCustomList
         }
 
         [TestMethod]
-        public void ListOfStrings_ConvertedIntoOneString_CombinedString()
+        public void ToString_ConvertedIntoOneString_CombinedString()
         {
             //Arrange
             CustomList<string> customList = new CustomList<string>();

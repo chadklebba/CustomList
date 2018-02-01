@@ -131,10 +131,11 @@ namespace CustomList
         public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> result = new CustomList<T>();
-            bool res = false;
-            result.array = new T[listOne.count - listTwo.count];
+            bool res = true;
+            result.array = new T[1];
             for(int i = 0; i < listOne.count; i++)
             {
+                res = true;
                 for(int j = 0; j <listTwo.count; j++)
                 {
                     if (listOne.array[i].Equals(listTwo.array[j]))
@@ -142,16 +143,11 @@ namespace CustomList
                         res = false;
                         break;
                     }
-                    else
-                    {
-                        res = true;
-                    }
-                    if (res == true)
-                    {
-                        result.Add(listOne.array[i]);
-                    }
                 }
-                
+                if (res == true)
+                {
+                    result.Add(listOne.array[i]);
+                }
             }
             return result;
         }
